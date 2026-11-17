@@ -1,5 +1,6 @@
 # Benchmarking Machine Learning Methods for Antimicrobial Peptide Prediction and Discovery in Ancient Microbiomes
-[fig1_v13-1.pdf](https://github.com/user-attachments/files/34980699/fig1_v13-1.pdf)
+<img width="2322" height="3159" alt="fig1_v13-1" src="https://github.com/user-attachments/assets/7a7af397-2c2b-4657-a35e-fc70de268b98" />
+
  
 **Overview**  
 This repository accompanies *Benchmarking Machine Learning Methods for Antimicrobial Peptide Prediction and Discovery in Ancient Microbiomes* (Preprint available on bioRxiv). Antimicrobial peptides (AMPs) are a promising alternative to conventional antibiotics, yet it remains unclear which feature representations and prediction methods best distinguish AMPs from non-antimicrobial sequences, and ancient microbiomes have received little attention as a source of novel candidates. We benchmark six machine learning methods across twelve feature configurations and eight curated AMP datasets under a unified framework, then apply the best-performing approach to three ancient metagenomes (Neanderthal gut, ancient oral, and mammoth-associated communities) to nominate high-confidence candidate AMPs. We also use reinforcement learning as a complementary, label-free route to candidate discovery.
