@@ -1,0 +1,146 @@
+{
+  "defaults": {
+    "feature_seed": 20261002,
+    "subset_size": 12,
+    "group_size": 1024,
+    "candidate_count": 111,
+    "reward": {
+      "weights": [
+        0.25,
+        0.25,
+        0.25,
+        -0.25
+      ],
+      "offset": 0.25,
+      "beta": 64.0,
+      "formula": "(Q + D + C + 1 - U) / 4",
+      "components": [
+        "Q",
+        "D",
+        "C",
+        "U"
+      ]
+    },
+    "device": "cpu",
+    "routes": [
+      "S1",
+      "S2"
+    ],
+    "methods": [
+      "ppo",
+      "tb"
+    ],
+    "seeds": [
+      17,
+      29,
+      43
+    ],
+    "checkpoints": [
+      4096,
+      8192
+    ],
+    "initial_calls": 512,
+    "final_calls": 1024,
+    "batch_size": 32,
+    "learning_rate": 0.0003,
+    "logz_learning_rate": 0.0003,
+    "tb_updates_per_batch": 4,
+    "ppo_epochs": 4,
+    "ppo_clip": 0.2,
+    "frozen_sampling_seed": 2026102301,
+    "diagnostics": {
+      "audit_subsets": 512,
+      "audit_seed": 2026102201
+    },
+    "length_control_replicates": 0,
+    "resource_limits": {
+      "cpu_threads": 2,
+      "max_load1": 18,
+      "min_available_ram_gib": 48,
+      "min_free_disk_gib": 80,
+      "max_child_rss_gib": 6
+    },
+    "q_sources": {
+      "S1": "preserved_sequence_entropy",
+      "S2": "Porto2018_raw_mu_over_sumexp"
+    },
+    "q_transform": "none",
+    "experiment_version": "quan_c3_equal_reward_release_20261117",
+    "representation": "Quan C3 mean40; float32; zero-pad64; no refit or L2",
+    "primary_output": "queried_direct",
+    "primary_checkpoint": 8192,
+    "no_automatic_evaluation": true
+  },
+  "datasets": {
+    "gut": {
+      "pool_size": 118583,
+      "dataset": "gut",
+      "cache_manifest_sha256": "6325fe4d231d27f62f336696b0baaf57afd7a800e8b34a3cfe04b663b49f7d95",
+      "export_prefix_count": 111,
+      "source_protocol_sha256": "664981cb8256866f044c5fd46bc44de637e4aacf8c9f01e65235e316e48fb4c8"
+    },
+    "oral": {
+      "pool_size": 387477,
+      "dataset": "oral",
+      "cache_manifest_sha256": "e121317bd6acb080780b86e08f99abccc93d52e89ab042abbd3bc99503d078ef",
+      "export_prefix_count": 76,
+      "source_protocol_sha256": "55d2b629c993fe1cf87d9c9b0350f7f630d6f2f6b1d8431c49a79e938d509491"
+    },
+    "mammoth": {
+      "pool_size": 287622,
+      "dataset": "mammoth",
+      "cache_manifest_sha256": "865afd06565f48a912d4c55b050d2d96ddd8f8b63f32b9f9b632a69d5257446b",
+      "export_prefix_count": 50,
+      "source_protocol_sha256": "6fb54214be38b96ebc3710774dd2252dc5fcd0ede787f847f0c459b24951e41b"
+    }
+  },
+  "inputs": {
+    "gut": {
+      "n": 118583,
+      "cache_manifest_sha256": "6325fe4d231d27f62f336696b0baaf57afd7a800e8b34a3cfe04b663b49f7d95",
+      "sequences_sha256": "bff5102a7c75d6b3a84fcc0fb0b227b9c8ae9400aeb17a34ab23342fc4c5cab5",
+      "c3_sha256": "b8ec849e318e425ad36c8688fad7aa44f13c5718c537cbbde5f60e15b551177d",
+      "mapping_sha256": "cb350506f0a1c1bb1d5f09500e51804e11a2cb69d4d95a425d9ce9fd1b42423c",
+      "actor_sha256": "d8cb18e4360b8ea3bf4823938a7c0a2c63c297aa9c3c42cd7063e6f579e8928e",
+      "archive_sha256": "d47706415ace75ac85553bebf9e05e4a2b33d6e7c5a30f7b045755d77d56ca79",
+      "archive_bytes": 1885799347
+    },
+    "oral": {
+      "n": 387477,
+      "cache_manifest_sha256": "e121317bd6acb080780b86e08f99abccc93d52e89ab042abbd3bc99503d078ef",
+      "sequences_sha256": "55a3af7dec1e7271d0a573aed8515d35ec3a13cf0672a12e6e4c189d31385eb8",
+      "c3_sha256": "995737c3639e5967b4eac61b2fcbc8f0264b99502b488e54bf1d107df8f5587e",
+      "mapping_sha256": "a3d91248f9833b5459e75c320a031278ed0a5963b90aa38375dfc201e2623ffc",
+      "actor_sha256": "80023562e16fe8d7ce07d1228f4efd98a2160e8a3d0cd6428ba36c07d2128ac9",
+      "archive_sha256": "053c4b4710ca449b2a1ca0d7d437dc416a4b47cdcd3d5d3ae9408f2ee14edae4",
+      "archive_bytes": 6407561863
+    },
+    "mammoth": {
+      "n": 287622,
+      "cache_manifest_sha256": "865afd06565f48a912d4c55b050d2d96ddd8f8b63f32b9f9b632a69d5257446b",
+      "sequences_sha256": "56870133d4568112cee162eee5d0cf398212ad461b1d5a142675dfc4bd105c1e",
+      "c3_sha256": "eb66fad3871cc9f1805d85e41a5d5a532ecd65e9ac8d226168cdf02812ebfbfd",
+      "mapping_sha256": "44866c7c577068ae7804bf16e29318584c105378621a87d3cb1bdc8c7ae83692",
+      "actor_sha256": "449c6ac302969b7e06e51c092dfa3215c8fee71282168dc8afe64e4d13dd39c0",
+      "archive_sha256": "28527ff47e6450e61e32b4d159e07f9ed20863005c3f050ede4f6aca6f7a7671",
+      "archive_bytes": 5011578188
+    }
+  },
+  "feature_source": {
+    "provider": "Quan Zhao",
+    "model": "esm2_t33_650M_UR50D",
+    "layer": 33,
+    "pca_dimensions": 40,
+    "author_formula": "features[:,40:80].mean(axis=0)",
+    "pca_object_supplied": false
+  },
+  "modules": {
+    "agent.py": "fed6e8d01a296bde2db74ca3fdd66b17e39ed94e46486ce2e15d7fa9f08970d1",
+    "convert_c3.py": "2da298483a4e1f1e43b8e06ec3751cb2fb71185df411d1ecc8955a799b649a66",
+    "features.py": "b104e8f001d6534240ea699d5e031f3eefe98705aa37463450fec795e6e9d5f9",
+    "outputs.py": "952c0430fec0f7b00c13aa9eacd1b08c25809e7c2d8e85ed9422651d8c4e00b6",
+    "rewards.py": "9606ec05e4d69e70a2a03180134716ba150282a206225b1e9834ae133126e823",
+    "runner.py": "e15c521268dcee910db7e4c069bb82c81bf6017bec9a8188ea2e8fc1598b8f8b",
+    "search.py": "57c79fd879c1631183f7b057c83734d113a5c4e1aaa924b019233a9a1d57eb49"
+  }
+}
